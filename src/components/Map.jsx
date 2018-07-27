@@ -2,32 +2,11 @@ import React, { Component } from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 export class MapContainer extends Component {
-	state = {
-		activeMarker: {},
-		selectedPlace: {},
-		showingInfoWindow: false,
-	}
-
-	onMarkerClicked = (props, marker, e) => this.setState({
-		selectedPlace: props,
-		activeMarker: marker,
-		showingInfoWindow: true
-	});
-
-	onMapClicked = (props) => {
-		if (this.state.showingInfoWindow) {
-			this.setState({
-				showingInfoWindow: false,
-				activeMarker: null
-			})
-		}
-	};
-
 	render() {
 		return (
 			<Map
 				google={this.props.google}
-				onClick={this.onMapClicked}
+				onClick={this.props.onMapClicked}
 				zoom={11}
 				initialCenter={{
 					lat: 60.451813,
@@ -38,7 +17,7 @@ export class MapContainer extends Component {
 				{
 					this.props.locations.map((location) => (
 						<Marker
-							onClick={this.onMarkerClicked}
+							onClick={this.props.onMarkerClicked}
 							key={location.name}
 							name={location.name}
 							position={{ lat: location.latitude, lng: location.longitude}}
@@ -47,10 +26,12 @@ export class MapContainer extends Component {
 				}
 
 				<InfoWindow
-					marker={this.state.activeMarker}
-					visible={this.state.showingInfoWindow}
+					marker={this.props.activeMarker}
+					visible={this.props.showingInfoWindow}
 				>
-					<h2>{this.state.selectedPlace.name}</h2>
+					<div>
+						<h2>{this.props.selectedPlace.name}</h2>
+					</div>
 				</InfoWindow>
 			</Map>
 		);
