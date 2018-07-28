@@ -9,6 +9,7 @@ const Map = withScriptjs(
 		.map(location => (
 			<LocationMarker
 				key = {location.name}
+				type = {location.type}
 				position = {{lat: location.latitude, lng: location.longitude}}
 			/>
 		));
