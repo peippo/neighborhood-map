@@ -73,7 +73,7 @@ header {
 
 .locations {
   min-width: 180px;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   background-color: #2b3d58;
   color: #ccd9ef; }
   .locations h2 {
@@ -157,5 +157,101 @@ header {
   text-transform: uppercase;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5); }
+
+.temperature {
+  position: relative;
+  height: 10px;
+  width: calc(100% - 40px);
+  margin: 30px auto;
+  background-color: #ccd9ef;
+  border-radius: 5px; }
+  .temperature:before {
+    content: 'TEMP';
+    position: absolute;
+    top: -1.25em;
+    left: 0;
+    font-size: 12px;
+    color: rgba(204, 217, 239, 0.33);
+    opacity: 1;
+    transition: all, 1s; }
+  .temperature:after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 3px;
+    height: 6px;
+    width: 0%;
+    background-color: #0025d8;
+    transition: all, 1s; }
+
+.temperature__value {
+  position: absolute;
+  top: -1.25em;
+  color: white;
+  font-size: 12px;
+  left: 0;
+  opacity: 1;
+  transition: all, 1s; }
+  .temperature__value:before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 1px;
+    height: 20px;
+    background-color: #ccd9ef; }
+
+.temperature--thirty:after {
+  width: 80%;
+  background-color: #d80028; }
+.temperature--thirty .temperature__value {
+  left: calc(80% + 5px); }
+
+.temperature--twentyfive:after {
+  width: 70%;
+  background-color: #d85000; }
+.temperature--twentyfive .temperature__value {
+  left: calc(70% + 5px); }
+
+.temperature--twenty:after {
+  width: 65%;
+  background-color: #d88c00; }
+.temperature--twenty .temperature__value {
+  left: calc(65% + 5px); }
+
+.temperature--fifteen:after {
+  width: 50%;
+  background-color: #00d825; }
+.temperature--fifteen .temperature__value {
+  left: calc(50% + 5px); }
+
+.temperature--ten:after {
+  width: 40%;
+  background-color: #13b581; }
+.temperature--ten .temperature__value {
+  left: calc(40% + 5px); }
+
+.temperature--zero:after {
+  width: 30%;
+  background-color: #009cd8; }
+.temperature--zero .temperature__value {
+  left: calc(30% + 5px); }
+
+.temperature--frozen:before {
+  left: auto;
+  right: 0; }
+.temperature--frozen:after {
+  width: 10%;
+  background-color: #0025d8; }
+.temperature--frozen .temperature__value {
+  left: calc(10% + 5px); }
+
+.temperature--error:before {
+  opacity: 0; }
+.temperature--error:after {
+  width: 10%; }
+.temperature--error .temperature__value {
+  left: calc(10% + 5px); }
 
 /*# sourceMappingURL=styles.css.map */

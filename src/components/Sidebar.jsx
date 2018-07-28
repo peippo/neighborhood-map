@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import TemperatureMeter from './TemperatureMeter';
 import LocationList from './LocationList';
 
 export class Sidebar extends Component {
@@ -7,6 +8,9 @@ export class Sidebar extends Component {
 		return (
 			<section className = "sidebar">
 				<Header />
+				<TemperatureMeter
+					temperature={this.props.temperature}
+				/>
 				<LocationList
 					locations = {this.props.locations}
 					currentFilter = {this.props.currentFilter}

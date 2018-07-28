@@ -7,6 +7,7 @@ import './styles/styles.css';
 class App extends Component {
 	state = {
 		currentFilter: 'all',
+		temperature: null,
 		locations: [
 				{
 					"name": "Ekvallan uimaranta",
@@ -186,10 +187,29 @@ class App extends Component {
 			]
 	}
 
+	getTemperature = () => {
+		fetch('http://api.openweathermap.org/data/2.5/weather?id=633679&units=metric&APPID=YOUR-API-KEY-HERE')
+		.then(response => response.json())
+		.then(response => this.updateTemperature(response.main.temp))
+		.catch(error => console.error(error));
+	};
+
+	updateTemperature = (temp) => {
+		this.setState({
+			temperature: Math.round(temp)
+		})
+	}
+
 	onFilterChange = (filterType) => {
 		this.setState({
 			currentFilter: filterType
 		})
+	}
+
+	componentDidMount = () => {
+		if (this.state.temperature === null) {
+			this.getTemperature();
+		}
 	}
 
 	render() {
@@ -199,6 +219,7 @@ class App extends Component {
 					locations = {this.state.locations}
 					currentFilter = {this.state.currentFilter}
 					onFilterChange = {this.onFilterChange}
+					temperature = {this.state.temperature}
 				/>
 				<MapContainer
 					locations = {this.state.locations}
