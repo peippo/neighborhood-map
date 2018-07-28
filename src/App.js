@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Map from './components/Map'
+import MapContainer from './components/MapContainer';
+import LocationList from './components/LocationList';
+
 import './styles/styles.css';
 
 class App extends Component {
 	state = {
-		showingInfoWindow: false,
-		activeMarker: {},
-		selectedPlace: {},
 		locations: [
 				{
 					"name": "Ekvallan uimaranta",
@@ -158,31 +157,17 @@ class App extends Component {
 			]
 	}
 
-	onMarkerClicked = (props, marker, e) => this.setState({
-		selectedPlace: props,
-		activeMarker: marker,
-		showingInfoWindow: true
-	});
-
-	onMapClicked = (props) => {
-		if (this.state.showingInfoWindow) {
-			this.setState({
-				showingInfoWindow: false,
-				activeMarker: null
-			})
-		}
-	};
 
 	render() {
 		return (
-			<Map
-				locations = {this.state.locations}
-				showingInfoWindow = {this.state.showingInfoWindow}
-				activeMarker = {this.state.activeMarker}
-				selectedPlace = {this.state.selectedPlace}
-				onMarkerClicked = {this.onMarkerClicked}
-				onMapClicked = {this.onMapClicked}
-			/>
+			<React.Fragment>
+				<LocationList
+					locations = {this.state.locations}
+				/>
+				<MapContainer
+					locations = {this.state.locations}
+				/>
+			</React.Fragment>
 		);
 	}
 }

@@ -1,43 +1,25 @@
-import React, { Component } from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import React from 'react';
+import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
+import LocationMarker from './LocationMarker';
 
-export class MapContainer extends Component {
-	render() {
+const Map = withScriptjs(
+	withGoogleMap(props => {
+		const markers = props.locations.map(location => (
+			<LocationMarker
+				key = {location.name}
+				position = {{lat: location.latitude, lng: location.longitude}}
+			/>
+		));
+
 		return (
-			<Map
-				google={this.props.google}
-				onClick={this.props.onMapClicked}
-				zoom={11}
-				initialCenter={{
-					lat: 60.451813,
-					lng: 22.26663
-				}}
+			<GoogleMap
+				defaultZoom = {11}
+				defaultCenter = {{lat:  60.420913, lng: 22.28863}}
 			>
-
-				{
-					this.props.locations.map((location) => (
-						<Marker
-							onClick={this.props.onMarkerClicked}
-							key={location.name}
-							name={location.name}
-							position={{ lat: location.latitude, lng: location.longitude}}
-						/>
-					))
-				}
-
-				<InfoWindow
-					marker={this.props.activeMarker}
-					visible={this.props.showingInfoWindow}
-				>
-					<div>
-						<h2>{this.props.selectedPlace.name}</h2>
-					</div>
-				</InfoWindow>
-			</Map>
+				{markers}
+			</GoogleMap>
 		);
-	}
-}
+	})
+);
 
-export default GoogleApiWrapper({
-	apiKey: 'AIzaSyAJWVDi1Ljaizd8KIbVjgPUBg_U0OyI57o'
-})(MapContainer)
+export default Map;
