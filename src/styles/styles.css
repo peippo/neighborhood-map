@@ -63,6 +63,14 @@ h1, h2, h3, h4, h5 {
     #root {
       flex-direction: row; } }
 
+header {
+  background-color: #2b3d58; }
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #2b3d58; }
+
 .locations {
   min-width: 180px;
   padding: 20px;
@@ -87,9 +95,10 @@ h1, h2, h3, h4, h5 {
 
 .logo {
   display: flex;
-  margin-bottom: 20px;
+  margin-top: 20px;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  color: #ccd9ef; }
   @media (min-width: 600px) {
     .logo {
       flex-direction: column; } }

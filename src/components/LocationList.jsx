@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import Logo from './Logo';
 import LocationFilters from './LocationFilters';
 
 export class LocationList extends Component {
 	render() {
 		return (
 			<div className="locations">
-				<Logo />
 				<LocationFilters
 					onFilterChange = {this.props.onFilterChange}
 				/>

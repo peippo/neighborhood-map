@@ -32,6 +32,16 @@ h1,h2,h3,h4,h5 {
 	}
 }
 
+header {
+	background-color: $darkblue;
+}
+
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	background-color: $darkblue;
+}
+
 .locations {
 	min-width: 180px;
 	padding: 20px;
@@ -64,9 +74,10 @@ h1,h2,h3,h4,h5 {
 
 .logo {
 	display: flex;
-	margin-bottom: 20px;
+	margin-top: 20px;
 	align-items: center;
 	justify-content: center;
+	color: $lightblue;
 
 	@media (min-width: 600px) {
 		flex-direction: column;

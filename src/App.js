@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import Sidebar from './components/Sidebar';
 import MapContainer from './components/MapContainer';
-import LocationList from './components/LocationList';
 
 import './styles/styles.css';
 
@@ -195,7 +195,7 @@ class App extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<LocationList
+				<Sidebar
 					locations = {this.state.locations}
 					currentFilter = {this.state.currentFilter}
 					onFilterChange = {this.onFilterChange}
