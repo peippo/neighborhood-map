@@ -1,9 +1,114 @@
 @import 'reset';
 
+$darkblue: #2b3d58;
+$lightblue: #ccd9ef;
+$red: #d80028;
+
+$base-font-family: 'Lato', sans-serif;
+$heading-font-family: 'Paytone One', sans-serif;
+
 html {
 	box-sizing: border-box;
+	font-family: $base-font-family;
+	font-size: 16px;
 }
 
 *, *:before, *:after {
 	box-sizing: inherit;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: $heading-font-family;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 600px) {
+		flex-direction: row;
+	}
+}
+
+.locations {
+	min-width: 180px;
+	padding: 20px;
+	background-color: $darkblue;
+	color: $lightblue;
+
+	h2 {
+		font-size: 20px;
+		font-weight: bold;
+		color: white;
+	}
+}
+
+.locations__list {
+	columns: 2;
+
+	@media (min-width: 600px) {
+		columns: auto;
+	}
+}
+
+.locations__item {
+	padding: .25em 0;
+
+	&:hover {
+		cursor: pointer;
+		color: white;
+	}
+}
+
+.logo {
+	display: flex;
+	margin-bottom: 20px;
+	align-items: center;
+	justify-content: flex-start;
+
+	@media (min-width: 600px) {
+		flex-direction: column;
+	}
+}
+
+.logo__top,
+.logo__middle,
+.logo__bottom {
+	text-transform: uppercase;
+	font-size: 1.5em;
+
+	@media (min-width: 600px) {
+		display: block;
+		text-align: center;
+	}
+}
+
+.logo__top {
+	@media (min-width: 600px) {
+		font-size: 1.6em;
+	}
+}
+
+.logo__middle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25px;
+	height: 25px;
+	border: 2px solid $darkblue;
+	background-color: lighten($red, 20%);
+	border-radius: 50%;
+	color: white;
+	z-index: 2;
+	font-size: 13px;
+
+	@media (min-width: 600px) {
+		margin: -10px auto -20px;
+	}
+}
+
+.logo__bottom {
+	@media (min-width: 600px) {
+		font-size: 2.4em;
+	}
 }
