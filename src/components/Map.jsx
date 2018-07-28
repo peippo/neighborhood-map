@@ -4,7 +4,9 @@ import LocationMarker from './LocationMarker';
 
 const Map = withScriptjs(
 	withGoogleMap(props => {
-		const markers = props.locations.map(location => (
+		const markers = props.locations
+		.filter(location => props.currentFilter === 'all' || location.type === props.currentFilter)
+		.map(location => (
 			<LocationMarker
 				key = {location.name}
 				position = {{lat: location.latitude, lng: location.longitude}}

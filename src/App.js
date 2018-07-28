@@ -6,6 +6,7 @@ import './styles/styles.css';
 
 class App extends Component {
 	state = {
+		currentFilter: 'all',
 		locations: [
 				{
 					"name": "Ekvallan uimaranta",
@@ -157,15 +158,23 @@ class App extends Component {
 			]
 	}
 
+	onFilterChange = (filterType) => {
+		this.setState({
+			currentFilter: filterType
+		})
+	}
 
 	render() {
 		return (
 			<React.Fragment>
 				<LocationList
 					locations = {this.state.locations}
+					currentFilter = {this.state.currentFilter}
+					onFilterChange = {this.onFilterChange}
 				/>
 				<MapContainer
 					locations = {this.state.locations}
+					currentFilter = {this.state.currentFilter}
 				/>
 			</React.Fragment>
 		);
