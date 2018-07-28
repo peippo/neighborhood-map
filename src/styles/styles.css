@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5 {
   display: flex;
   margin-bottom: 20px;
   align-items: center;
-  justify-content: flex-start; }
+  justify-content: center; }
   @media (min-width: 600px) {
     .logo {
       flex-direction: column; } }
@@ -121,7 +121,8 @@ h1, h2, h3, h4, h5 {
   border-radius: 50%;
   color: white;
   z-index: 2;
-  font-size: 13px; }
+  font-size: 13px;
+  animation: bg-color-cycle 10s infinite; }
   @media (min-width: 600px) {
     .logo__middle {
       margin: -10px auto -20px; } }
@@ -130,8 +131,18 @@ h1, h2, h3, h4, h5 {
   .logo__bottom {
     font-size: 2.4em; } }
 
+@keyframes bg-color-cycle {
+  0% {
+    background-color: #ff3f63; }
+  33% {
+    background-color: #55a235; }
+  66% {
+    background-color: #d49304; }
+  100% {
+    background-color: #ff3f63; } }
 .filter {
-  margin: 0 0 10px 0; }
+  margin: 0 0 10px 0;
+  text-align: center; }
 
 .filter__label {
   text-transform: uppercase;
