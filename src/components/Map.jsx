@@ -2,6 +2,8 @@ import React from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
 import LocationMarker from './LocationMarker';
 
+const mapStyles = require("./mapStyles.json");
+
 const Map = withScriptjs(
 	withGoogleMap(props => {
 		const markers = props.locations
@@ -18,6 +20,7 @@ const Map = withScriptjs(
 			<GoogleMap
 				defaultZoom = {11}
 				defaultCenter = {{lat:  60.420913, lng: 22.28863}}
+				defaultOptions={{ styles: mapStyles }}
 			>
 				{markers}
 			</GoogleMap>
