@@ -17,7 +17,11 @@ export class LocationList extends Component {
 						.filter(location => this.props.currentFilter === 'all' || location.type === this.props.currentFilter)
 						.map((location) => (
 							<li
-								className = "locations__item"
+								className = {
+									this.props.selectedLocation.name === location.name ?
+									'locations__item locations__item--selected' :
+									'locations__item'
+								}
 								key = {location.name}
 								onClick = {() => this.props.onLocationSelection(location.name)}
 							>

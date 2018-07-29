@@ -194,7 +194,7 @@ class App extends Component {
 		.then(response => response.json())
 		.then(response => this.updateTemperature(response.main.temp))
 		.catch(error => console.error(error));
-	};
+	}
 
 	updateTemperature = (temp) => {
 		this.setState({
@@ -206,6 +206,13 @@ class App extends Component {
 		this.setState({
 			currentFilter: filterType
 		})
+
+		// Clear location selection if the type does not match the selected filter type
+		if (filterType !== 'all' && filterType !== this.state.selectedLocation.type) {
+			this.setState({
+				selectedLocation: {}
+			})
+		}
 	}
 
 	onLocationSelection = (selectedName) => {
