@@ -6,8 +6,13 @@ const mapStyles = require("./mapStyles.json");
 
 const Map = withScriptjs(
 	withGoogleMap(props => {
-		const markers = props.locations
-		.filter(location => props.currentFilter === 'all' || location.type === props.currentFilter)
+
+		// Get an array of filtered markers
+		const filteredMarkers = props.locations
+		.filter(location => props.currentFilter === 'all' || location.type === props.currentFilter);
+
+		// Build Marker components based on filtered markers array
+		const markers = filteredMarkers
 		.map(location => (
 			<LocationMarker
 				key = {location.name}
@@ -19,11 +24,19 @@ const Map = withScriptjs(
 			/>
 		));
 
+		// Extend map bounds based on filtered markers array
+		const bounds = new window.google.maps.LatLngBounds();
+		filteredMarkers
+		.map(location => (
+			bounds.extend({lat: location.latitude, lng: location.longitude})
+		));
+
 		return (
 			<GoogleMap
 				defaultZoom = {11}
 				defaultCenter = {{lat:  60.420913, lng: 22.28863}}
-				defaultOptions={{ styles: mapStyles }}
+				defaultOptions = {{ styles: mapStyles }}
+				ref = {map => map && map.fitBounds(bounds)}
 			>
 				{markers}
 			</GoogleMap>
