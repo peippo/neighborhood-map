@@ -8,6 +8,7 @@ class App extends Component {
 	state = {
 		currentFilter: 'all',
 		temperature: null,
+		locationsListVisible: false,
 		locations: [
 				{
 					"name": "Ekvallan uimaranta",
@@ -206,6 +207,12 @@ class App extends Component {
 		})
 	}
 
+	toggleLocationsList = () => {
+		this.setState({
+			locationsListVisible: this.state.locationsListVisible ? false : true
+		})
+	}
+
 	componentDidMount = () => {
 		if (this.state.temperature === null) {
 			this.getTemperature();
@@ -218,8 +225,10 @@ class App extends Component {
 				<Sidebar
 					locations = {this.state.locations}
 					currentFilter = {this.state.currentFilter}
-					onFilterChange = {this.onFilterChange}
 					temperature = {this.state.temperature}
+					onFilterChange = {this.onFilterChange}
+					toggleLocationsList = {this.toggleLocationsList}
+					locationsListVisible = {this.state.locationsListVisible}
 				/>
 				<MapContainer
 					locations = {this.state.locations}

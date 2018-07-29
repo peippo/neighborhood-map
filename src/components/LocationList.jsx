@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import LocationFilters from './LocationFilters';
+import LocationsToggler from './LocationsToggler';
 
 export class LocationList extends Component {
 	render() {
+		const locationsListClasses = this.props.locationsListVisible ? 'locations__list' : 'locations__list locations__list--minimized'
+
 		return (
 			<div className="locations">
 				<LocationFilters
 					onFilterChange = {this.props.onFilterChange}
 				/>
-				<ul className="locations__list">
+				<ul className={`${locationsListClasses}`}>
 					{
 						this.props.locations
 						.filter(location => this.props.currentFilter === 'all' || location.type === this.props.currentFilter)
@@ -19,6 +22,9 @@ export class LocationList extends Component {
 						))
 					}
 				</ul>
+				<LocationsToggler
+					toggleLocationsList = {this.props.toggleLocationsList}
+				/>
 			</div>
 		);
 	}
