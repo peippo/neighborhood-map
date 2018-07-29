@@ -207,7 +207,7 @@ class App extends Component {
 			currentFilter: filterType
 		})
 
-		// Clear location selection if the type does not match the selected filter type
+		// Clear active location selection if the type does not match the selected filter type
 		if (filterType !== 'all' && filterType !== this.state.selectedLocation.type) {
 			this.setState({
 				selectedLocation: {}
@@ -216,8 +216,11 @@ class App extends Component {
 	}
 
 	onLocationSelection = (selectedName) => {
+		// Find selected location from locations array based on the name property on the clicked marker or list item
+		// TODO: Change comparison from name property to an id property?
 		const newSelectedLocation = this.state.locations.filter(location => location.name === selectedName)
 
+		// If new selection is not the current selection, change selected location, otherwise clear it
 		if (this.state.selectedLocation.name !== newSelectedLocation[0].name) {
 			this.setState({
 				selectedLocation: newSelectedLocation[0]

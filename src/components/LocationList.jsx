@@ -4,14 +4,17 @@ import LocationsToggler from './LocationsToggler';
 
 export class LocationList extends Component {
 	render() {
-		const locationsListClasses = this.props.locationsListVisible ? 'locations__list' : 'locations__list locations__list--minimized'
+		const locationsListClasses =
+		this.props.locationsListVisible ?
+		'locations__list' :
+		'locations__list locations__list--minimized'
 
 		return (
 			<div className="locations">
 				<LocationFilters
 					onFilterChange = {this.props.onFilterChange}
 				/>
-				<ul className={`${locationsListClasses}`}>
+				<ul className = {`${locationsListClasses}`}>
 					{
 						this.props.locations
 						.filter(location => this.props.currentFilter === 'all' || location.type === this.props.currentFilter)

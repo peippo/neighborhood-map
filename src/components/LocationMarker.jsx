@@ -9,6 +9,8 @@ const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
 
 class LocationMarker extends Component {
 	render() {
+
+		// Get marker icon based on location type
 		let markerIcon;
 		switch (this.props.type) {
 			case 'sea':
@@ -24,6 +26,9 @@ class LocationMarker extends Component {
 				break;
 		}
 
+		// Add bouncing animation to marker if the name property on the marker
+		// matches name property on the currently selected location
+		// TODO: Change comparison from name property to an id property?
 		let animationStatus = false;
 		if (this.props.selectedLocation.name === this.props.name) {
 			animationStatus = google.maps.Animation.BOUNCE
@@ -38,6 +43,9 @@ class LocationMarker extends Component {
 			>
 
 			{
+				// Show info box if the name property on the marker
+				// matches name property on the currently selected location
+				// TODO: Change comparison from name property to an id property?
 				this.props.selectedLocation.name === this.props.name &&
 				<InfoBox
 					onCloseClick={() => this.props.onLocationSelection(this.props.name)}
