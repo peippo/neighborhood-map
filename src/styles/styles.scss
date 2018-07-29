@@ -376,3 +376,35 @@ header {
 		left: calc(10% + 5px);
 	}
 }
+
+
+.infoBox {
+	background-color: white;
+	padding: 10px;
+	overflow: visible !important;
+	min-width: 250px !important;
+	transform: translateX(-50%) translateY(15px) !important;
+	box-shadow: 0 20px 30px -10px rgba(black, 0.5);
+	border-radius: 10px;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: -30px;
+		left: calc(50% - 15px);
+		width: 30px;
+		height: 30px;
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		border-top: 15px solid transparent;
+		border-bottom: 15px solid white;
+	}
+
+	img {
+		z-index: 2;
+	}
+}
+
+.infoBox__heading {
+	font-size: 1.2em;
+}

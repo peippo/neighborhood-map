@@ -5,6 +5,8 @@ import SeaIcon from "../images/sea-marker.png";
 import LakeIcon from "../images/lake-marker.png";
 import PoolIcon from "../images/pool-marker.png";
 
+const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
+
 class LocationMarker extends Component {
 	render() {
 		let markerIcon;
@@ -34,6 +36,16 @@ class LocationMarker extends Component {
 				onClick = {() => this.props.onLocationSelection(this.props.name)}
 				animation = {animationStatus}
 			>
+
+			{
+				this.props.selectedLocation.name === this.props.name &&
+				<InfoBox
+					onCloseClick={() => this.props.onLocationSelection(this.props.name)}
+				>
+					<h2 className="infoBox__heading">{this.props.name}</h2>
+				</InfoBox>
+			}
+
 			</Marker>
 		);
 	}
