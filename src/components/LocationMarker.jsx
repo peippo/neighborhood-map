@@ -1,3 +1,4 @@
+/*global google*/
 import React, { Component } from 'react';
 import { Marker } from 'react-google-maps';
 import SeaIcon from "../images/sea-marker.png";
@@ -21,10 +22,17 @@ class LocationMarker extends Component {
 				break;
 		}
 
+		let animationStatus = false;
+		if (this.props.selectedLocation.name === this.props.name) {
+			animationStatus = google.maps.Animation.BOUNCE
+		}
+
 		return (
 			<Marker
 				position = {this.props.position}
 				icon = {markerIcon}
+				onClick = {() => this.props.onLocationSelection(this.props.name)}
+				animation = {animationStatus}
 			>
 			</Marker>
 		);

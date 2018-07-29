@@ -9,6 +9,7 @@ class App extends Component {
 		currentFilter: 'all',
 		temperature: null,
 		locationsListVisible: false,
+		selectedLocation: {},
 		locations: [
 				{
 					"name": "Ekvallan uimaranta",
@@ -207,6 +208,20 @@ class App extends Component {
 		})
 	}
 
+	onLocationSelection = (selectedName) => {
+		const newSelectedLocation = this.state.locations.filter(location => location.name === selectedName)
+
+		if (this.state.selectedLocation.name !== newSelectedLocation[0].name) {
+			this.setState({
+				selectedLocation: newSelectedLocation[0]
+			})
+		} else {
+			this.setState({
+				selectedLocation: {}
+			})
+		}
+	}
+
 	toggleLocationsList = () => {
 		this.setState({
 			locationsListVisible: this.state.locationsListVisible ? false : true
@@ -227,12 +242,16 @@ class App extends Component {
 					currentFilter = {this.state.currentFilter}
 					temperature = {this.state.temperature}
 					onFilterChange = {this.onFilterChange}
+					onLocationSelection = {this.onLocationSelection}
 					toggleLocationsList = {this.toggleLocationsList}
 					locationsListVisible = {this.state.locationsListVisible}
+					selectedLocation = {this.state.selectedLocation}
 				/>
 				<MapContainer
+					onLocationSelection = {this.onLocationSelection}
 					locations = {this.state.locations}
 					currentFilter = {this.state.currentFilter}
+					selectedLocation = {this.state.selectedLocation}
 				/>
 			</React.Fragment>
 		);

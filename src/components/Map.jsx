@@ -12,7 +12,10 @@ const Map = withScriptjs(
 			<LocationMarker
 				key = {location.name}
 				type = {location.type}
+				name = {location.name}
 				position = {{lat: location.latitude, lng: location.longitude}}
+				selectedLocation = {props.selectedLocation}
+				onLocationSelection = {props.onLocationSelection}
 			/>
 		));
 

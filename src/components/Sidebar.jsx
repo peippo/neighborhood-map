@@ -15,8 +15,10 @@ export class Sidebar extends Component {
 					locations = {this.props.locations}
 					currentFilter = {this.props.currentFilter}
 					onFilterChange = {this.props.onFilterChange}
+					onLocationSelection = {this.props.onLocationSelection}
 					toggleLocationsList = {this.props.toggleLocationsList}
 					locationsListVisible = {this.props.locationsListVisible}
+					selectedLocation = {this.props.selectedLocation}
 				/>
 			</section>
 		);
