@@ -246,6 +246,7 @@ header {
 		color: rgba($lightblue, 0.33);
 		opacity: 1;
 		transition: all, 1s;
+		animation: fade-in 1s;
 	}
 
 	&:after {
@@ -365,7 +366,11 @@ header {
 
 .temperature--error {
 	&:before {
-		opacity: 0;
+		content: 'API ERROR!';
+		right: 0;
+		left: auto;
+		opacity: 1;
+		animation: fade-in 4s;
 	}
 
 	&:after {
@@ -375,6 +380,12 @@ header {
 	.temperature__value {
 		left: calc(10% + 5px);
 	}
+}
+
+@keyframes fade-in {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 

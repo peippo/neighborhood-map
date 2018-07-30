@@ -330,6 +330,8 @@ header {
 		color: rgba(204, 217, 239, 0.33);
 		opacity: 1;
 		transition: all, 1s;
+		-webkit-animation: fade-in 1s;
+		        animation: fade-in 1s;
 	}
 
 .temperature:after {
@@ -433,7 +435,12 @@ header {
 	}
 
 .temperature--error:before {
-		opacity: 0;
+		content: 'API ERROR!';
+		right: 0;
+		left: auto;
+		opacity: 1;
+		-webkit-animation: fade-in 4s;
+		        animation: fade-in 4s;
 	}
 
 .temperature--error:after {
@@ -443,6 +450,18 @@ header {
 .temperature--error .temperature__value {
 		left: calc(10% + 5px);
 	}
+
+@-webkit-keyframes fade-in {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes fade-in {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
 
 .infoBox {
 	background-color: white;
