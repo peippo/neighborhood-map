@@ -10,6 +10,7 @@ class App extends Component {
 		currentFilter: 'all',
 		temperature: null,
 		locationsListVisible: false,
+		mapCenter: {lat:  60.420913, lng: 22.28863},
 		selectedLocation: {},
 		locations: locationList
 	}
@@ -40,7 +41,7 @@ class App extends Component {
 		}
 	}
 
-	onLocationSelection = (selectedName) => {
+	onLocationSelection = (selectedName, position) => {
 		// Find selected location from locations array based on the name property on the clicked marker or list item
 		// TODO: Change comparison from name property to an id property?
 		const newSelectedLocation = this.state.locations.filter(location => location.name === selectedName)
@@ -54,6 +55,15 @@ class App extends Component {
 			this.setState({
 				selectedLocation: {}
 			})
+		}
+
+		// If position was received, set mapCenter state to it (which is passed along to Map.jsx)
+		if (position) {
+			this.setState({
+				mapCenter: {lat: position.lat, lng: position.lng}
+			})
+
+			console.log('Trying to center on:', this.state.mapCenter)
 		}
 	}
 
@@ -87,6 +97,7 @@ class App extends Component {
 					locations = {this.state.locations}
 					currentFilter = {this.state.currentFilter}
 					selectedLocation = {this.state.selectedLocation}
+					mapCenter = {this.state.mapCenter}
 				/>
 			</React.Fragment>
 		);

@@ -33,8 +33,10 @@ const Map = withScriptjs(
 
 		return (
 			<GoogleMap
-				defaultZoom = {11}
+				// TODO centering is not working
+				center = {props.mapCenter}
 				defaultCenter = {{lat:  60.420913, lng: 22.28863}}
+				defaultZoom = {11}
 				defaultOptions = {{ styles: mapStyles }}
 				ref = {map => map && map.fitBounds(bounds)}
 			>
