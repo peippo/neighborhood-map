@@ -136,10 +136,17 @@ header {
 
 .locations__link {
 	color: $lightblue;
+	background-color: transparent;
+	border: none;
+	font-size: 16px;
 	text-decoration: none;
+	padding: 0;
+	font-family: $base-font-family;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: white;
+		outline: none;
 	}
 }
 

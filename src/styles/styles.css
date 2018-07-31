@@ -195,11 +195,18 @@ header {
 
 .locations__link {
 	color: #ccd9ef;
+	background-color: transparent;
+	border: none;
+	font-size: 16px;
 	text-decoration: none;
+	padding: 0;
+	font-family: 'Lato', sans-serif;
 }
 
-.locations__link:hover {
+.locations__link:hover,
+	.locations__link:focus {
 		color: white;
+		outline: none;
 	}
 
 .locations__item--selected {
