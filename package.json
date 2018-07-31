@@ -1,5 +1,6 @@
 {
   "name": "neighborhood-map",
+  "homepage" : "https://lumous.com/swimming-in-turku",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
