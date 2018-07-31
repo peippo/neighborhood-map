@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import LocationFilters from './LocationFilters';
 import LocationsToggler from './LocationsToggler';
 
@@ -28,7 +29,7 @@ export class LocationList extends Component {
 								key = {location.name}
 								onClick = {() => this.props.onLocationSelection(location.name, location.venueId)}
 							>
-								<a className="locations__link" href="#">{location.shortName}</a>
+								<Link className="locations__link" to={`/${location.shortName}`}>{location.shortName}</Link>
 							</li>
 						))
 					}
