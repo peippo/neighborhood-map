@@ -54,7 +54,8 @@ class LocationMarker extends Component {
 				// When location info is loaded, show error if we have an error, otherwise show loaded location info
 				this.props.selectedLocation.name === this.props.name &&
 				<InfoBox
-					onCloseClick={() => this.props.onLocationSelection(this.props.name)}
+					options = {{ closeBoxURL: ''}}
+					onCloseClick = {() => this.props.onLocationSelection(this.props.name)}
 				>
 					{this.props.loadingLocationInfo ?
 						<LoadingSpinner /> :
