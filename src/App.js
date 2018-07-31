@@ -11,6 +11,9 @@ class App extends Component {
 		temperature: null,
 		locationsListVisible: false,
 		selectedLocation: {},
+		locationInfo: {},
+		loadingLocationInfo: false,
+		loadingLocationInfoError: false,
 		locations: locationList
 	}
 
@@ -27,6 +30,31 @@ class App extends Component {
 		})
 	}
 
+	getLocationInfo = (venueId) => {
+		this.setState({ loadingLocationInfo: true }, () => {
+			fetch(`https://api.foursquare.com/v2/venues/${venueId}/?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&v=20180730`)
+			.then(response => {
+				if (response.ok) {
+					return response.json()
+				} else {
+					return Promise.reject('API fetch error!')
+				}
+			})
+			.then(data => {
+				this.setState({
+					loadingLocationInfo: false,
+					locationInfo: data.response.venue
+				})
+			})
+			.catch(error => {
+				this.setState({
+					loadingLocationInfo: false,
+					loadingLocationInfoError: true
+				})
+			});
+		});
+	}
+
 	onFilterChange = (filterType) => {
 		this.setState({
 			currentFilter: filterType
@@ -40,7 +68,7 @@ class App extends Component {
 		}
 	}
 
-	onLocationSelection = (selectedName) => {
+	onLocationSelection = (selectedName, venueId, lat, lng) => {
 		// Find selected location from locations array based on the name property on the clicked marker or list item
 		// TODO: Change comparison from name property to an id property?
 		const newSelectedLocation = this.state.locations.filter(location => location.name === selectedName)
@@ -55,6 +83,13 @@ class App extends Component {
 				selectedLocation: {}
 			})
 		}
+
+		this.setState({
+			loadingLocationInfo: false,
+			loadingLocationInfoError: false
+		})
+
+		this.getLocationInfo(venueId);
 	}
 
 	toggleLocationsList = () => {
@@ -87,6 +122,9 @@ class App extends Component {
 					locations = {this.state.locations}
 					currentFilter = {this.state.currentFilter}
 					selectedLocation = {this.state.selectedLocation}
+					locationInfo = {this.state.locationInfo}
+					loadingLocationInfo = {this.state.loadingLocationInfo}
+					loadingLocationInfoError = {this.state.loadingLocationInfoError}
 				/>
 			</React.Fragment>
 		);

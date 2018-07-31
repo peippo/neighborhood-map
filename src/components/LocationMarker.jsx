@@ -1,6 +1,9 @@
 /*global google*/
 import React, { Component } from 'react';
 import { Marker } from 'react-google-maps';
+import LoadingSpinner from './LoadingSpinner';
+import InfoBoxContent from './InfoBoxContent';
+import LocationInfoError from './LocationInfoError';
 import SeaIcon from "../images/sea-marker.png";
 import LakeIcon from "../images/lake-marker.png";
 import PoolIcon from "../images/pool-marker.png";
@@ -38,7 +41,7 @@ class LocationMarker extends Component {
 			<Marker
 				position = {this.props.position}
 				icon = {markerIcon}
-				onClick = {() => this.props.onLocationSelection(this.props.name)}
+				onClick = {() => this.props.onLocationSelection(this.props.name, this.props.venueId, this.props.position.lat, this.props.position.lng)}
 				animation = {animationStatus}
 			>
 
@@ -46,11 +49,20 @@ class LocationMarker extends Component {
 				// Show info box if the name property on the marker
 				// matches name property on the currently selected location
 				// TODO: Change comparison from name property to an id property?
+
+				// Show loading spinner if we are still loading location info
+				// When location info is loaded, show error if we have an error, otherwise show loaded location info
 				this.props.selectedLocation.name === this.props.name &&
 				<InfoBox
 					onCloseClick={() => this.props.onLocationSelection(this.props.name)}
 				>
-					<h2 className="infoBox__heading">{this.props.name}</h2>
+					{this.props.loadingLocationInfo ?
+						<LoadingSpinner /> :
+
+						this.props.loadingLocationInfoError ?
+						<LocationInfoError /> :
+						<InfoBoxContent locationInfo={this.props.locationInfo} />
+					}
 				</InfoBox>
 			}
 

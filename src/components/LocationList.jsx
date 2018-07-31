@@ -26,7 +26,7 @@ export class LocationList extends Component {
 									'locations__item'
 								}
 								key = {location.name}
-								onClick = {() => this.props.onLocationSelection(location.name)}
+								onClick = {() => this.props.onLocationSelection(location.name, location.venueId)}
 							>
 								{location.shortName}
 							</li>

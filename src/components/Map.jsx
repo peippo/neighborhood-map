@@ -18,8 +18,12 @@ const Map = withScriptjs(
 				key = {location.name}
 				type = {location.type}
 				name = {location.name}
+				venueId = {location.venueId}
 				position = {{lat: location.latitude, lng: location.longitude}}
 				selectedLocation = {props.selectedLocation}
+				locationInfo = {props.locationInfo}
+				loadingLocationInfo = {props.loadingLocationInfo}
+				loadingLocationInfoError = {props.loadingLocationInfoError}
 				onLocationSelection = {props.onLocationSelection}
 			/>
 		));
