@@ -18,7 +18,7 @@ class App extends Component {
 	}
 
 	getTemperature = () => {
-		fetch('http://api.openweathermap.org/data/2.5/weather?id=633679&units=metric&APPID=YOUR-API-KEY-HERE')
+		fetch('https://api.openweathermap.org/data/2.5/weather?id=633679&units=metric&APPID=YOUR-API-KEY-HERE')
 		.then(response => response.json())
 		.then(response => this.updateTemperature(response.main.temp))
 		.catch(error => console.error(error));
