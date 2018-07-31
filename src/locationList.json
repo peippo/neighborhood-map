@@ -4,174 +4,215 @@
 		"shortName": "Ekvalla",
 		"type": "sea",
 		"latitude": 60.379258,
-		"longitude": 22.2255376
+		"longitude": 22.2255376,
+		"venueId": "4c021a1e8ef2c9b66f9e16fc"
 	},
 	{
 		"name": "Ispoisten uimaranta",
 		"shortName": "Ispoinen",
 		"type": "sea",
 		"latitude": 60.4144203,
-		"longitude": 22.2571506
+		"longitude": 22.2571506,
+		"venueId": "4bc990c3511f95213ae6adc7"
 	},
 	{
 		"name": "Saaronniemen uimaranta",
 		"shortName": "Saaronniemi",
 		"type": "sea",
 		"latitude": 60.4217679,
-		"longitude": 22.0907459
+		"longitude": 22.0907459,
+		"venueId": "4bf53b6f98ac0f4709d664a8"
 	},
 	{
 		"name": "Sorttamäen uimaranta",
 		"shortName": "Sorttamäki",
 		"type": "sea",
 		"latitude": 60.4087123,
-		"longitude": 22.2539155
+		"longitude": 22.2539155,
+		"venueId": "4c0229c5310fc9b62b23c461"
 	},
 	{
 		"name": "Ristikallion uimaranta",
 		"shortName": "Ristikallio",
 		"type": "lake",
 		"latitude": 60.4470319,
-		"longitude": 22.395566
+		"longitude": 22.395566,
+		"venueId": "4df4b776d1649c8a28e74747"
 	},
 	{
 		"name": "Littoisten uimaranta",
 		"shortName": "Littoinen",
 		"type": "lake",
 		"latitude": 60.4583366,
-		"longitude": 22.3748857
+		"longitude": 22.3748857,
+		"venueId": "4c419ebace54e21eea4d0b1a"
 	},
 	{
 		"name": "Järvelän uimaranta",
 		"shortName": "Järvelä",
 		"type": "lake",
 		"latitude": 60.4590244,
-		"longitude": 22.3853198
+		"longitude": 22.3853198,
+		"venueId": "51c9bb17498e94b9e0ba9446"
 	},
 	{
 		"name": "Ruskon uimaranta",
 		"shortName": "Rusko",
 		"type": "lake",
 		"latitude": 60.5219548,
-		"longitude": 22.2205587
+		"longitude": 22.2205587,
+		"venueId": "4df4e13d52b100c2d7ff6253"
 	},
 	{
 		"name": "Kuuslahden uimaranta",
 		"shortName": "Kuuslahti",
 		"type": "sea",
 		"latitude": 60.3861495,
-		"longitude": 22.3333665
+		"longitude": 22.3333665,
+		"venueId": "4df20ae322718759f819aee2"
 	},
 	{
 		"name": "Hovirinnan uimaranta",
 		"shortName": "Hovirinta",
 		"type": "sea",
 		"latitude": 60.3958349,
-		"longitude": 22.3762966
+		"longitude": 22.3762966,
+		"venueId": "4deddb0ed164f9a5c682568e"
 	},
 	{
 		"name": "Voivalan uimaranta",
 		"shortName": "Voivala",
 		"type": "sea",
 		"latitude": 60.4041779,
-		"longitude": 22.412202
+		"longitude": 22.412202,
+		"venueId": "4df0bd8d45ddbf3897d33b21"
 	},
 	{
 		"name": "Brinkhallin uimaranta",
 		"shortName": "Brinkhalli",
 		"type": "lake",
 		"latitude": 60.365564,
-		"longitude": 22.2331042
+		"longitude": 22.2331042,
+		"venueId": "4c39e7cfdfb0e21ea923b1a8"
 	},
 	{
 		"name": "Maarian uimaranta",
 		"shortName": "Maaria",
 		"type": "lake",
 		"latitude": 60.5250989,
-		"longitude": 22.3443163
+		"longitude": 22.3443163,
+		"venueId": "4c2895d297d00f47ef0140ea"
 	},
 	{
 		"name": "Kailonsaaren uimaranta",
 		"shortName": "Kailonsaari",
 		"type": "sea",
 		"latitude": 60.4740662,
-		"longitude": 21.9349003
+		"longitude": 21.9349003,
+		"venueId": "4feec7e5e4b00e3bf85a1736"
 	},
 	{
 		"name": "Hessundin uimaranta",
 		"shortName": "Hessund",
 		"type": "sea",
 		"latitude": 60.3235351,
-		"longitude": 22.3439679
+		"longitude": 22.3439679,
+		"venueId": "537cb57b498e6e093160bf5a"
 	},
 	{
 		"name": "Norrbyn uimaranta",
 		"shortName": "Norrby",
 		"type": "sea",
 		"latitude": 60.3168093,
-		"longitude": 22.2971989
+		"longitude": 22.2971989,
+		"venueId": "4e157be8d22d026fa76e8c1a"
 	},
 	{
 		"name": "Bläsnäsin uimaranta",
 		"shortName": "Bläsnäs",
 		"type": "sea",
 		"latitude": 60.3133675,
-		"longitude": 22.2934745
+		"longitude": 22.2934745,
+		"venueId": "4e12ebff52b1655efa52976f"
 	},
 	{
 		"name": "Harvaluoto uimaranta",
 		"shortName": "Harvaluoto",
 		"type": "sea",
 		"latitude": 60.3714259,
-		"longitude": 22.5106078
+		"longitude": 22.5106078,
+		"venueId": "4d255c9bc2b36ea8a36725d4"
 	},
 	{
 		"name": "Porhonkallion uimaranta",
 		"shortName": "Porhonkallio",
 		"type": "sea",
 		"latitude": 60.4587154,
-		"longitude": 21.9321632
+		"longitude": 21.9321632,
+		"venueId": "501663efe4b0c7c30e14e8ed"
 	},
 	{
 		"name": "Lielahden uimaranta",
 		"shortName": "Lielahti",
 		"type": "sea",
 		"latitude": 60.3035573,
-		"longitude": 22.4149616
+		"longitude": 22.4149616,
+		"venueId": "5161a53de4b05b2fb13c921b"
 	},
 	{
 		"name": "Kuurnanpään uimaranta",
 		"shortName": "Kuurnanpää",
 		"type": "sea",
 		"latitude": 60.5356011,
-		"longitude": 21.9418357
+		"longitude": 21.9418357,
+		"venueId": "558c441c498e5fe92a47f565"
 	},
 	{
 		"name": "Impivaaran uimahalli",
 		"shortName": "Impivaara",
 		"type": "pool",
 		"latitude": 60.4782815,
-		"longitude": 22.2580156
+		"longitude": 22.2580156,
+		"venueId": "4f23a6afe4b012e02e550945"
 	},
 	{
 		"name": "Petreliuksen uimahalli",
 		"shortName": "Petrelius",
 		"type": "pool",
 		"latitude": 60.4314316,
-		"longitude": 22.2912546
+		"longitude": 22.2912546,
+		"venueId": "4d0a5b899de0b1f7ca9d8253"
+	},
+	{
+		"name": "Turun uimahalli",
+		"shortName": "Turku",
+		"type": "pool",
+		"latitude": 60.4543002,
+		"longitude": 22.2855079,
+		"venueId": "4be83cefee96c92886d4fdbf"
+	},
+	{
+		"name": "Kaarinan uimahalli",
+		"shortName": "Samppalinna",
+		"type": "pool",
+		"latitude": 60.4027656,
+		"longitude": 22.3721301,
+		"venueId": "4c29cea5fe6e2d7fbf4e553c"
 	},
 	{
 		"name": "Kupittaan maauimala",
 		"shortName": "Kupittaa",
 		"type": "pool",
 		"latitude": 60.4451028,
-		"longitude": 22.2889654
+		"longitude": 22.2889654,
+		"venueId": "4c07ade0a0129c740c90d2c9"
 	},
 	{
 		"name": "Samppalinnan maauimala",
 		"shortName": "Samppalinna",
 		"type": "pool",
 		"latitude": 60.4457302,
-		"longitude": 22.2640569
+		"longitude": 22.2640569,
+		"venueId": "4be24d0421d5a59348651611"
 	}
 ]
