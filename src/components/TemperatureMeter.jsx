@@ -24,7 +24,7 @@ export class TemperatureMeter extends Component {
 		};
 
 		return (
-			<div className={`temperature temperature--${temperatureLevel}`}>
+			<div className={`temperature temperature--${temperatureLevel}`} aria-label="Current temperature in Turku">
 				<span className="temperature__value">{currentTemperature}&deg;C</span>
 			</div>
 		);

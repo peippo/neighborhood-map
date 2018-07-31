@@ -132,16 +132,23 @@ header {
 	padding: .33em .5em;
 	border-radius: 5px;
 	transition: all, .5s;
+}
+
+.locations__link {
+	color: $lightblue;
+	text-decoration: none;
 
 	&:hover {
-		cursor: pointer;
 		color: white;
 	}
 }
 
 .locations__item--selected {
-	color: white;
 	background-color: darken($darkblue, 15%);
+
+	.locations__link {
+		color: white;
+	}
 }
 
 .map-container {

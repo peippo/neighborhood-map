@@ -10,7 +10,7 @@ export class LocationList extends Component {
 		'locations__list locations__list--minimized'
 
 		return (
-			<div className="locations">
+			<div className="locations" role="navigation">
 				<LocationFilters
 					onFilterChange = {this.props.onFilterChange}
 				/>
@@ -28,7 +28,7 @@ export class LocationList extends Component {
 								key = {location.name}
 								onClick = {() => this.props.onLocationSelection(location.name, location.venueId)}
 							>
-								{location.shortName}
+								<a className="locations__link" href="#">{location.shortName}</a>
 							</li>
 						))
 					}

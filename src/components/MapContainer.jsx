@@ -14,7 +14,7 @@ class MapContainer extends Component {
 				loadingLocationInfoError = {this.props.loadingLocationInfoError}
 				googleMapURL = {'https://maps.googleapis.com/maps/api/js?key=AIzaSyAJWVDi1Ljaizd8KIbVjgPUBg_U0OyI57o'}
 				loadingElement = {<div style={{ width: '100%', height: '100%' }} />}
-				containerElement = {<section className="map-container" />}
+				containerElement = {<section className="map-container" role="application"/>}
 				mapElement = {<div style={{ width: '100%', height: '100%' }} />}
 			/>
 		);

@@ -11,7 +11,7 @@ class InfoBoxContent extends Component {
 		return (
 			<div>
 			{this.props.locationInfo &&
-				<div>
+				<figure>
 					<div className="infoContent__image" style={{backgroundImage: `url(${backgroundImage})`}}></div>
 					<div className="infoContent__content">
 						<h2 className="infoContent__name">{this.props.locationInfo.name}</h2>
@@ -23,7 +23,7 @@ class InfoBoxContent extends Component {
 							<h3 className="infoContent__location">{this.props.locationInfo.location.address}, {this.props.locationInfo.location.city}</h3>
 						}
 					</div>
-				</div>
+				</figure>
 			}
 			</div>
 		);

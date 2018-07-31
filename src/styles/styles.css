@@ -193,15 +193,22 @@ header {
 	transition: all, .5s;
 }
 
-.locations__item:hover {
-		cursor: pointer;
+.locations__link {
+	color: #ccd9ef;
+	text-decoration: none;
+}
+
+.locations__link:hover {
 		color: white;
 	}
 
 .locations__item--selected {
-	color: white;
 	background-color: rgb(37, 52, 75);
 }
+
+.locations__item--selected .locations__link {
+		color: white;
+	}
 
 .map-container {
 	width: 100%;

@@ -5,6 +5,7 @@ export class LocationsToggler extends Component {
 		return (
 			<button
 				className = "locations-toggler"
+				aria-label="Toggle location list"
 				onClick = {() => this.props.toggleLocationsList()}
 			></button>
 		);
