@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Sidebar from './components/Sidebar';
 import MapContainer from './components/MapContainer';
+import MapError from './components/MapError';
 import './styles/styles.css';
 
 const locationList = require("./locationList.json");
@@ -126,6 +127,7 @@ class App extends Component {
 					locationsListVisible = {this.state.locationsListVisible}
 					selectedLocation = {this.state.selectedLocation}
 				/>
+				<MapError>
 				<MapContainer
 					onLocationSelection = {this.onLocationSelection}
 					locations = {this.state.locations}
@@ -135,6 +137,7 @@ class App extends Component {
 					loadingLocationInfo = {this.state.loadingLocationInfo}
 					loadingLocationInfoError = {this.state.loadingLocationInfoError}
 				/>
+				</MapError>
 			</React.Fragment>
 		);
 	}
