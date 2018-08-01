@@ -14,7 +14,7 @@ export class LocationList extends Component {
 				<LocationFilters
 					onFilterChange = {this.props.onFilterChange}
 				/>
-				<ul className = {`${locationsListClasses}`}>
+				<ul className = {`${locationsListClasses}`} role="list">
 					{
 						this.props.locations
 						.filter(location => this.props.currentFilter === 'all' || location.type === this.props.currentFilter)
@@ -27,6 +27,7 @@ export class LocationList extends Component {
 								}
 								key = {location.name}
 								onClick = {() => this.props.onLocationSelection(location.name, location.venueId)}
+								role = "listitem"
 							>
 								<button className="locations__link">{location.shortName}</button>
 							</li>
