@@ -581,6 +581,26 @@ header {
 	text-align: center;
 }
 
+.error--google {
+	visibility: hidden;
+	position: absolute;
+	z-index: 10;
+	top: -80px;
+	left: calc(50% - 250px);
+	width: 500px;
+	height: 80px;
+	background-color: white;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0 0 0 0 rgba(black, 0);
+	transition: top, .5s;
+}
+
+.error--google--active {
+	visibility: visible;
+	top: 0;
+	box-shadow: 0 20px 50px -10px rgba(black, 0.3);
+}
+
 .error__icon {
 	display: block;
 	transform: rotate(90deg);

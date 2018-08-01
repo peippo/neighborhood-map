@@ -99,9 +99,18 @@ class App extends Component {
 	}
 
 	componentDidMount = () => {
+		window.gm_authFailure = this.gm_authFailure;
+		let googleError = document.getElementById('googleError');
+		googleError.setAttribute("style", "display: block;");
+
 		if (this.state.temperature === null) {
 			this.getTemperature();
 		}
+	}
+
+	gm_authFailure(){
+		let googleError = document.getElementById('googleError');
+		googleError.classList.add('error--google--active');
 	}
 
 	render() {
