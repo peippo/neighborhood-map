@@ -69,13 +69,12 @@ class App extends Component {
 		}
 	}
 
-	onLocationSelection = (selectedName, venueId, lat, lng) => {
-		// Find selected location from locations array based on the name property on the clicked marker or list item
-		// TODO: Change comparison from name property to an id property?
-		const newSelectedLocation = this.state.locations.filter(location => location.name === selectedName)
+	onLocationSelection = (venueId, lat, lng) => {
+		// Find selected location from locations array based on the venue id property on the clicked marker or list item
+		const newSelectedLocation = this.state.locations.filter(location => location.venueId === venueId)
 
 		// If new selection is not the current selection, change selected location, otherwise clear it
-		if (this.state.selectedLocation.name !== newSelectedLocation[0].name) {
+		if (this.state.selectedLocation.venueId !== newSelectedLocation[0].venueId) {
 			this.setState({
 				selectedLocation: newSelectedLocation[0]
 			})

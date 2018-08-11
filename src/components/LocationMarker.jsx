@@ -31,9 +31,8 @@ class LocationMarker extends Component {
 
 		// Add bouncing animation to marker if the name property on the marker
 		// matches name property on the currently selected location
-		// TODO: Change comparison from name property to an id property?
 		let animationStatus = false;
-		if (this.props.selectedLocation.name === this.props.name) {
+		if (this.props.selectedLocation.venueId === this.props.venueId) {
 			animationStatus = google.maps.Animation.BOUNCE
 		}
 
@@ -41,21 +40,20 @@ class LocationMarker extends Component {
 			<Marker
 				position = {this.props.position}
 				icon = {markerIcon}
-				onClick = {() => this.props.onLocationSelection(this.props.name, this.props.venueId, this.props.position.lat, this.props.position.lng)}
+				onClick = {() => this.props.onLocationSelection(this.props.venueId, this.props.position.lat, this.props.position.lng)}
 				animation = {animationStatus}
 			>
 
 			{
-				// Show info box if the name property on the marker
-				// matches name property on the currently selected location
-				// TODO: Change comparison from name property to an id property?
+				// Show info box if the venue id property on the marker
+				// matches venue id property on the currently selected location
 
 				// Show loading spinner if we are still loading location info
 				// When location info is loaded, show error if we have an error, otherwise show loaded location info
-				this.props.selectedLocation.name === this.props.name &&
+				this.props.selectedLocation.venueId === this.props.venueId &&
 				<InfoBox
 					options = {{ closeBoxURL: ''}}
-					onCloseClick = {() => this.props.onLocationSelection(this.props.name)}
+					onCloseClick = {() => this.props.onLocationSelection(this.props.venueId)}
 				>
 					{this.props.loadingLocationInfo ?
 						<LoadingSpinner /> :

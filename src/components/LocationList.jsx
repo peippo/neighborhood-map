@@ -21,12 +21,12 @@ export class LocationList extends Component {
 						.map((location) => (
 							<li
 								className = {
-									this.props.selectedLocation.name === location.name ?
+									this.props.selectedLocation.venueId === location.venueId ?
 									'locations__item locations__item--selected' :
 									'locations__item'
 								}
-								key = {location.name}
-								onClick = {() => this.props.onLocationSelection(location.name, location.venueId)}
+								key = {location.venueId}
+								onClick = {() => this.props.onLocationSelection(location.venueId)}
 							>
 								<button className="locations__link">{location.shortName}</button>
 							</li>
